@@ -11,6 +11,7 @@ const propTypes = {
 const defaultProps = {
 	width: "100%",
 	height: "100%",
+	isLoading: false,
 };
 
 const ChartData = (props) => {

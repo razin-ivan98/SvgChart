@@ -57,6 +57,7 @@ const App = () => {
 				<ChartData>
 					{data.map((item, i) =>(<ChartDataItem
 						isActive={item.isActive}
+						isLoading={loading}
 						onChangeActive={onChangeActive}
 						onDeleteItem={onDeleteItem}
 						key={item.id} id={item.id} backgroundColor={item.color}

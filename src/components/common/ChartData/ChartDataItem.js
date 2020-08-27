@@ -13,9 +13,11 @@ const propTypes = {
 	onChangeActive: PropTypes.func,
 	onDeleteItem: PropTypes.func,
 	isActive: PropTypes.bool,
+	isLoading: PropTypes.bool,
 };
 const defaultProps = {
 	isActive: true,
+	isLoading: false,
 };
 
 const ChartDataItem = (props) => {
@@ -26,6 +28,7 @@ const ChartDataItem = (props) => {
 		onChangeActive,
 		onDeleteItem,
 		isActive,
+		isLoading,
 	} = props;
 
 	const max = Math.max(...data);
@@ -38,9 +41,9 @@ const ChartDataItem = (props) => {
 	return (
 		<ChartDataItemWrapper backgroundColor={backgroundColor}>
 			<InputWrapper>
-				<CheckBox isChecked={isActive} onChange={() => onChangeActive(id)}/>
+				<CheckBox isDisabled={isLoading} isChecked={isActive} onChange={() => onChangeActive(id)}/>
 			</InputWrapper>
-			<Button type="danger" onClick={() => onDeleteItem(id)}>Delete</Button>
+			<Button isDisabled={isLoading} type="danger" onClick={() => onDeleteItem(id)}>Delete</Button>
 			<Text><span>Max = {max}; </span> <span>Area = {area.toFixed(2)}</span></Text>
 		</ChartDataItemWrapper>
 	);
