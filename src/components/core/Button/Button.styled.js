@@ -12,6 +12,7 @@ export const Wrapper = styled.button.attrs({})`
 	color: white;
 	border: 1px solid white;
 	border-radius: 5px;
+	transition: 0.3s;
 	${({ isDisabled }) => (isDisabled ? 
 		`background-color: #333333;
 		color: #666666;
